@@ -1,94 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Rock-Paper-Scissors</title>
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-	<script type="text/javascript">
-		let playerScore = 0;
-		let comScore = 0;
+	<header>
+		<h1>Rock.Paper.Scissors</h1>
+	</header>
 
-		let options = ["Rock", "Paper", "Scissors"];
-		let changed = [];
-		for(let i = 0; i < options.length; i++){
-			changed.push(options[i].toUpperCase());
-		}
+	<div class="container" id="main">
+		<div id="roundCounter">
+			<label for="round">Game Rounds :</label>
+			<input type="number" id="round">
+			<button id="playButton">Play</button>
+		</div>
 
+		<div id="play">
+			<p id="pScore">Your Score: </p>
+			<p id="cScore">Computer's Score: </p>
+		</div>
 
-		function random(){
-			return Math.floor(Math.random() * options.length);
-		}
+		<div id="input">
+			<div>
+				<label id="inputLabel" for="pInput">You: </label>
+				<input type="text" id="pInput" placeholder="Rock / Paper / Scissors">				
+			</div>
+			<p id="cInput">Computer: </p>
+		</div>
+	</div>
 
-		function computerPlay(){
-			let option = options[random()]
-			return option;
-		}
-
-		function playRound(playerInput, computerInput){
-			playerInput = playerInput.toUpperCase();
-			let alphabet = playerInput.split("");
-			let rock = options[0].split("");
-			let paper = options[1].split("");
-			let scis = options[2].split("");
-
-			if(playerInput == changed[0] || alphabet[0].toUpperCase() == rock[0]){
-				playerInput = options[0];
-			}else if(playerInput == changed[1] || alphabet[0].toUpperCase() == paper[0]){
-				playerInput = options[1];
-			}else if(playerInput == changed[2] || alphabet[0].toUpperCase() == scis[0]){
-				playerInput = options[2];
-			}
-
-			if( (playerInput == options[0]&& 
-				 computerInput == options[1]) || 
-				(playerInput == options[1] &&
-				 computerInput == options[2]) || 
-				(playerInput == options[2] &&
-				 computerInput == options[0]))
-			{
-				comScore += 1;
-				console.log("You lose! " + computerInput + " beats " + playerInput + ".");
-			}
-			else if( (playerInput == options[1] && 
-				 computerInput == options[0]) || 
-				(playerInput == options[2] &&
-				 computerInput == options[1]) || 
-				(playerInput == options[0] &&
-				 computerInput == options[2]))
-			{
-				playerScore += 1;
-				console.log("You win! " + playerInput + " beats " + computerInput + ".");
-			}
-			else if(playerInput == computerInput){
-				console.log("Tie! " + computerInput + " equals " + playerInput + ".");
-			}
-			else{
-				console.log("Undefined");
-			}
-
-		}
-
-		function game(gameCount){
-			playerScore = 0;
-			comScore = 0;
-			for(let i = 0; i < gameCount; i++){
-				let input = prompt("Select: ");
-				playRound(input, computerPlay());
-			}			
-
-			if(playerScore > comScore){
-				console.log("You win!");
-			}
-			else if(playerScore < comScore){
-				console.log("You lose!");
-			}
-			else{
-				console.log("It's a tie!");
-			}
-		}
-
-
-
-	</script>
 </body>
+
+<script src="script.js"></script>
+
 </html>
