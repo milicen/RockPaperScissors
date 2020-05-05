@@ -8,13 +8,6 @@ for(let i = 0; i < options.length; i++){
 	changed.push(options[i].toUpperCase());
 }
 
-let rounds = document.getElementById("round");
-let play_btn = document.getElementById("playButton");
-let playerScoreDisp = document.getElementById("pScore");
-let comScoreDisp = document.getElementById("cScore");
-let playerInput = document.getElementById("pInput");
-let computerInput = document.getElementById("cInput"); 
-
 
 function random(){
 	return Math.floor(Math.random() * options.length);

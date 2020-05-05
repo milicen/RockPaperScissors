@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<meta charset="UTF-8">
 <html>
 <head>
 	<title>Rock-Paper-Scissors</title>
@@ -11,27 +12,28 @@
 
 	<div class="container" id="main">
 		<div id="roundCounter">
-			<label for="round">Game Rounds :</label>
-			<input type="number" id="round">
+			<!-- <label for="round">Game Rounds :</label>
+			<input type="number" id="round"> -->
 			<button id="playButton">Play</button>
+			<button id="replayButton">Replay</button>
 		</div>
 
 		<div id="play">
-			<p id="pScore">Your Score: </p>
-			<p id="cScore">Computer's Score: </p>
+			<p id="pScore">Your Score: -</p>
+			<p id="cScore">Computer's Score: -</p>
 		</div>
 
 		<div id="input">
-			<div>
-				<label id="inputLabel" for="pInput">You: </label>
-				<input type="text" id="pInput" placeholder="Rock / Paper / Scissors">				
-			</div>
-			<p id="cInput">Computer: </p>
+			<button class="choice" id="rock"><img src="rockypng.png"></button>
+			<button class="choice" id="paper"><img src="paper.png"></button>
+			<button class="choice" id="scissors"><img src="scissors.png"></button>			
 		</div>
+		<div id="comments"></div>
+		<div id="winner"></div>
 	</div>
 
 </body>
 
-<script src="script.js"></script>
+<script src="testing.js"></script>
 
 </html>
